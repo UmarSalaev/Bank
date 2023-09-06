@@ -30,9 +30,9 @@ public class Main {
 
 		System.out.println("Выбраный " + saveAcc.get(number1));
 
-		//balance(saveAcc, number1);
-		//deposit(saveAcc, number1);
-		overdraftLimit(saveAcc,number1);
+		balance(saveAcc, number1);
+		deposit(saveAcc, number1);
+
 	}
 
 	private static void balance(List<SavingAccount> saveAcc, int number1) {
@@ -84,26 +84,4 @@ public class Main {
 
 	}
 
-	public static void overdraftLimit(List<SavingAccount> saveAcc, int number1) {
-		System.out.println("Хотите купить новый холодильник??");
-
-		Scanner sc2 = new Scanner(System.in);
-		Scanner sc = new Scanner(System.in);
-
-		String answer2 = sc2.nextLine();
-		String answerYess = "Y";
-		String answerNon = "N";
-
-		if (answer2.equals(answerYess)) {
-			System.out.println("Введите сумму для снятия с депозита");
-			double newBalance = 0;
-			double amount = sc.nextDouble();
-			overdraftLimit(saveAcc, number1);
-			System.out.println(saveAcc.get(number1));
-			
-		} else {
-			System.out.println("Всего доброго.Пока");
-		}
-
-	}
 }
